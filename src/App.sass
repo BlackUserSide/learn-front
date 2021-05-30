@@ -1,0 +1,289 @@
+h1, h2, h3,h4,h5,h6, p
+    margin: 0
+ul
+    padding: 0
+$maincolor: #FF007A
+body
+    background: #ccc
+.main-app
+    max-width: 1920px
+    width: 100%
+    background: #fff
+    margin: 0 auto
+.login-page-wrapper
+    max-width: 100%
+    width: 100%
+    min-height: 750px
+.main-section-wrapper
+    background: url('./images/Group 22.jpg')
+    min-height: 700px
+    position: relative
+    background-repeat: no-repeat
+    background-size: cover
+    .img_main_1
+        position: absolute
+        bottom: 2%
+        right: 40%
+    .img_main_2
+        position: absolute
+        top: 70%
+        right: 30%
+    .img_main_3
+        position: absolute
+        top: 70%
+        right: 5%
+    .img_main_4
+        position: absolute
+        top: 10%
+        right: 5%
+.header-wrapper
+    display: flex
+    color: #fff
+    max-width: 100%
+    padding: 10px 30px
+    align-items: center
+    justify-content: space-between
+    .logo-wrapper
+        flex-grow: 1
+        a
+            text-decoration: none
+            color: #fff
+            outline: none
+    .main-nav-bar
+        flex-grow: 1
+    ul
+        display: inline-block
+        display: flex
+        justify-content: space-evenly
+        max-width: 100%
+        list-style-type: none
+        li
+            a
+                color: #fff
+                text-decoration: none
+                outline: none
+.main-composition
+    margin-top: 250px
+    padding: 0 35px
+    .h1
+        color: $maincolor
+        font-weight: 700
+        font-size: 64px
+        line-height: 78px
+        margin-bottom: 30px
+    p
+        color: #fff
+        font-weight: 400
+        font-size: 24px
+        margin-bottom: 30px
+.btn
+    cursor: pointer
+    padding: 8px 25px
+    display: inline-block
+.btn-main
+    background-color: $maincolor
+    color: #fff
+    border-radius: 24px
+    transition: all .3s ease
+    &:hover
+        transform: scale(1.1)
+
+.about-component-wrapper
+    padding: 35px 50px
+    .container-about-wrapper
+        display: flex
+        max-width: 100%
+        justify-content: space-between
+        align-items: center
+        .image-wrapper
+            flex-grow: 1
+        .about-composition-wrapper
+            flex-grow: 2
+            width: 10%
+            p
+                width: 80%
+                font-weight: 200
+                font-size: 24px
+                line-height: 38px
+                margin-bottom: 20px
+            span
+                background-color: $maincolor
+                color: #fff
+                border-radius: 24px
+                transition: all .3s ease
+                &:hover
+                    transform: scale(1.1)
+
+.dream-component-wrapper
+    padding: 35px 50px
+    .top-line
+        text-align: center
+        margin-bottom: 30px
+        .h2
+            font-size: 48px
+            color: $maincolor
+    .dreams-wrapper
+        display: flex
+        max-width: 100%
+        justify-content: space-between
+        .item-dream-wrapper
+            max-width: 270px
+            background: #FFE2F0
+            border-radius: 15px
+            cursor: pointer
+            transition: .3s ease
+            &:hover
+                transform: scale(1.1)
+            img
+                width: 100%
+            .info-dream-wrapper
+                display: flex
+                flex-direction: column
+                align-items: center
+                .name-wrapper
+                    margin-bottom: 15px
+                    p
+                        font-size: 14px
+                        color: $maincolor
+                        font-weight: 500
+                .border-line
+                    background: linear-gradient(90deg, rgba(255, 43, 145, 0) 0%, rgba(255, 43, 145, 0.6) 54.17%, rgba(255, 43, 145, 0) 100%)
+                    border-radius: 1px
+                    width: 180px
+                    height: 2px
+                    margin-bottom: 15px
+                h4
+                    font-weight: 500
+                    font-size: 20px
+                    line-height: 24px
+                    margin-bottom: 15px
+                h3
+                    font-weight: 500
+                    font-size: 24px
+                    text-align: center
+                    color: $maincolor
+                    margin-bottom: 34px
+.header-wrapper-black
+    display: flex
+    color: #000
+    max-width: 100%
+    padding: 10px 30px
+    align-items: center
+    justify-content: space-between
+    .logo-wrapper
+        flex-grow: 1
+        a
+            text-decoration: none
+            color: #000
+            outline: none
+    .main-nav-bar
+        flex-grow: 1
+    ul
+        display: inline-block
+        display: flex
+        justify-content: space-evenly
+        max-width: 100%
+        list-style-type: none
+        li
+            a
+                color: #000
+                text-decoration: none
+                outline: none
+.main-login
+    padding: 70px 50px
+    .h1
+        font-weight: 600
+        font-size: 48px
+        color: $maincolor
+        margin-bottom: 47px
+.main-auth-form
+    display: flex
+    flex-direction: column
+    input
+        padding: 19px 30px
+        font-size: 24px
+        font-weight: 300
+        max-width: 440px
+        border: 1px solid $maincolor
+        display: inline-block
+        margin-bottom: 20px
+        border-radius: 33px
+        outline: none
+    .btn-wrapper
+        display: flex
+        justify-content: space-between
+        max-width: 500px
+        align-items: center
+        button
+            padding: 17px 32px
+            background: $maincolor
+            color: #fff
+            border: none
+            border-radius: 25px
+            cursor: pointer
+            font-weight: 700
+            cursor: pointer
+            transition: .3s ease
+            max-width: 186px
+            &:hover
+                background: rgba($maincolor, .9)
+        span
+            border: 1px solid $maincolor
+            padding: 17px 32px
+            border-radius: 25px
+            cursor: pointer
+            max-width: 116px
+            a
+                text-decoration: none
+                color: #000
+                font-weight: 700
+.main-register-wrapper
+    padding: 70px 50px
+    .h1
+        font-weight: 600
+        font-size: 48px
+        color: $maincolor
+        margin-bottom: 47px
+.main-composition-philanthropist
+    background: url('./images/bg2.svg')
+    min-height: 450px
+    background-size: cover
+    position: relative
+    .main-text
+        margin-left: 20px
+        width: 600px
+        height: 100px
+        transform: skew(-20deg)
+        background: #fff
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        position: absolute
+        top: 50%
+        left: 10%
+        h1
+            font-size: 48px
+            color: $maincolor
+            font-weight: 600
+.philanthropist-content
+    display: flex
+    max-width: 100%
+    padding: 50px 130px
+    justify-content: space-between
+    .item-philanthropist-wrapper
+        display: flex
+        flex-direction: column
+        align-items: center
+        .name-wrapper
+            .h3
+                font-weight: 500
+                font-size: 24px
+                color: $maincolor
+                margin-bottom: 25px
+        .lvl-wrapper
+            p
+                font-weight: 500
+                font-size: 18px
+            span
+                font-weight: bold
