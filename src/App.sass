@@ -1,13 +1,15 @@
+
 h1, h2, h3,h4,h5,h6, p
     margin: 0
 ul
     padding: 0
 $maincolor: #FF007A
 body
-    background: #ccc
+    background: #fff
 .main-app
     max-width: 1920px
     width: 100%
+    min-height: 100%
     background: #fff
     margin: 0 auto
 .login-page-wrapper
@@ -199,6 +201,16 @@ body
 .main-auth-form
     display: flex
     flex-direction: column
+    .top-err-message
+        display: inline-block
+        p
+            position: relative
+            left: 1%
+            font-size: 22px
+            animation: loginErrorMessage .3s ease-in-out forwards
+
+            font-weight: bold
+            color: $maincolor
     input
         padding: 19px 30px
         font-size: 24px
@@ -287,3 +299,16 @@ body
                 font-size: 18px
             span
                 font-weight: bold
+.register-page
+    min-height: 750px
+// -------------------- KeyFrames---------------
+
+@keyframes loginErrorMessage
+    0%
+        opacity: 0
+        margin-bottom: 0px
+    50%
+        opacity: 1
+        margin-bottom: 20px
+    100%
+        margin-bottom: 50px

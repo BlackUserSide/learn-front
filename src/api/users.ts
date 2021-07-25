@@ -11,7 +11,7 @@ export const loginUser = async (data: any) => {
 
   await request({
     method: "POST",
-    url: `loginUser`,
+    url: `/auth/login`,
     data: {
       login: data.login,
       password: data.password,
@@ -36,7 +36,7 @@ export const registerUsers = async (data: any) => {
 
   await request({
     method: "POST",
-    url: `loginUser`,
+    url: `/registerUser`,
     data: {
       login: data.login,
       password: data.password,

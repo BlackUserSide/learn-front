@@ -10,6 +10,7 @@ export const MainLogin: React.FC = () => {
     email: "",
     password: "",
   });
+  const [message, setMessage] = useState<string | undefined>(undefined);
   const changeHandler = (e: FormEvent<HTMLInputElement>) => {
     const name: string = e.currentTarget.name;
     const val: string = e.currentTarget.value;
@@ -21,15 +22,24 @@ export const MainLogin: React.FC = () => {
   const submitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     loginUser(dataLogin)
-      .then((res) => console.log(res))
+      .then((res) => {
+        if (res) {
+          switch (res.status) {
+            case 200:
+              return;
+            case 422:
+              setMessage("Неправильный логин или пароль");
+          }
+        }
+      })
       .catch((err) => console.log(err));
   };
-  console.log(dataLogin);
 
   return (
     <div className="main-login">
       <h1 className="h1">Авторизация</h1>
       <form className="main-auth-form" onSubmit={submitHandler}>
+        <div className="top-err-message">{message ? <p>{message}</p> : ""}</div>
         <input
           type="text"
           name="email"

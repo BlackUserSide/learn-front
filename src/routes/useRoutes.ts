@@ -1,12 +1,17 @@
+import { ErrorPage } from "./../Components/ErrorPage/ErrorPage";
+import { MainCabinet } from "./../Components/Cabinet/MainCabinet";
 import { LoginPage } from "../Components/AuthComposition/LoginPage";
 import { RegisterPage } from "../Components/AuthComposition/RegisterPage";
 import { PhilanthropistMain } from "../Components/PhilanthropistComposition/PhilanthropistMain";
 import { MainSection } from "../Components/Section/MainSection";
 import { TRoutesWrapper } from "./RoutesContext";
+import { HomeCabinet } from "../Components/Cabinet/MainPageCabinet/HomeCabinet/HomeCabinet";
+import { MyDreamPage } from "../Components/Cabinet/MyDreamPage/MyDreamPage";
 
 export const useRoutes: TRoutesWrapper = {
   routes: [
     { path: "/", component: MainSection, exact: true, routes: [] },
+    { path: "*", component: ErrorPage, exact: true, routes: [] },
     { path: "/login", component: LoginPage, exact: false, routes: [] },
     { path: "/register", component: RegisterPage, exact: false, routes: [] },
     {
@@ -14,6 +19,25 @@ export const useRoutes: TRoutesWrapper = {
       component: PhilanthropistMain,
       exact: false,
       routes: [],
+    },
+    {
+      path: "/cabinet",
+      component: MainCabinet,
+      exact: false,
+      routes: [
+        {
+          path: "/cabinet/home",
+          exact: false,
+          component: HomeCabinet,
+          routes: [],
+        },
+        {
+          path: "/cabinet/my-dream",
+          exact: false,
+          component: MyDreamPage,
+          routes: [],
+        },
+      ],
     },
   ],
 };

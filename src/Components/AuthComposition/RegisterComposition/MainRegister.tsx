@@ -45,6 +45,12 @@ export const MainRegister: React.FC = () => {
           placeholder="Пароль"
           onChange={changeHandler}
         />
+        <input
+          type="password"
+          name="curPassword"
+          placeholder="Повторите пароль"
+          onChange={changeHandler}
+        />
         <div className="btn-wrapper">
           <button type="submit">Регистрация</button>
         </div>

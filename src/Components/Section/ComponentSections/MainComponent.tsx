@@ -8,8 +8,8 @@ export const MainComponent: React.FC = () => {
     <div className="main-component">
       <div className="main-composition">
         <h1 className="h1">
-          Благотварительная
-          <br /> платформа
+          Краудфайдинг
+          <br /> для детей
         </h1>
         <p>Крауфандинговая площадка для детей</p>
         <span className="btn btn-main">Подробнее</span>
