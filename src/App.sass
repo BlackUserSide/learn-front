@@ -34,10 +34,27 @@ body
         position: absolute
         top: 70%
         right: 5%
-    .img_main_4
+    .image-link-to-red
         position: absolute
-        top: 10%
-        right: 5%
+        top: 23%
+        right: 15%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        .link-to-red
+            a
+                color: #fff
+                text-decoration: none
+                background: #FF0000
+                cursor: pointer
+                padding: 10px 25px
+                box-shadow: 0px 4px 16px #FF0000
+                border-radius: 15px
+                display: inline-block
+                transition: .3s ease
+                &:hover
+                    transform: scale(1.1)
 .header-wrapper
     display: flex
     color: #fff
@@ -249,6 +266,27 @@ body
                 text-decoration: none
                 color: #000
                 font-weight: 700
+    .btn-role-change
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        width: 350px
+        margin-bottom: 30px
+        .role-btn
+            display: inline-block
+            padding: 10px 25px
+            background: #fff
+            border: 1px solid #FF007A
+            box-sizing: border-box
+            border-radius: 25px
+            cursor: pointer
+            transition: .3s ease
+            &:hover
+                background: #FF007A
+                color: #fff
+        .active-role-btn
+            background: #FF007A
+            color: #fff
 .main-register-wrapper
     padding: 70px 50px
     .h1
@@ -256,6 +294,24 @@ body
         font-size: 48px
         color: $maincolor
         margin-bottom: 47px
+    .err-form-wrapper
+        padding: 0 15px
+        padding-top: 20px
+        p
+            font-size: 22px
+            color: #FF007A
+            font-weight: bold
+            opacity: 0
+            animation: err-fade .5s ease-in-out forwards
+@keyframes err-fade
+    0%
+        opacity: 0
+        margin-bottom: 0
+    50%
+        margin-bottom: 10px
+    100%
+        opacity: 1
+        margin-bottom: 10px
 .main-composition-philanthropist
     background: url('./images/bg2.svg')
     min-height: 450px
@@ -301,6 +357,14 @@ body
                 font-weight: bold
 .register-page
     min-height: 750px
+.bg-lock
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(#000, .7)
+    z-index: 99
 // -------------------- KeyFrames---------------
 
 @keyframes loginErrorMessage

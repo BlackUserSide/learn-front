@@ -3,6 +3,7 @@ export interface IRegisterMain {
   password: string;
   firstName: string;
   lastName: string;
-  role: number;
+  role: number | null;
   status: number;
+  secondPassword: string;
 }

@@ -1,7 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getUser } from "../../api/users";
+import { restoreToken } from "../../function/restoreToken";
 
 export const HeaderBlack: React.FC = () => {
+  const [auth, setAuth] = useState<boolean>(false);
+  useEffect(() => {
+    const token: string | null = localStorage.getItem("token");
+    if (token) {
+      getUser()
+        .then((res) => {
+          switch (res.status) {
+            case 200:
+              setAuth(true);
+              break;
+            case 401:
+              setAuth(false);
+              restoreToken();
+              break;
+          }
+        })
+        .catch((err) => console.log(err));
+    }
+  }, []);
   return (
     <div className="header-wrapper-black">
       <div className="logo-wrapper">
@@ -21,7 +42,11 @@ export const HeaderBlack: React.FC = () => {
             <Link to="/philanthropist">Благотворители</Link>
           </li>
           <li>
-            <Link to="/login">Авторизация</Link>
+            {auth ? (
+              <Link to="/cabinet/home">Кабинет</Link>
+            ) : (
+              <Link to="/login">Авторизация</Link>
+            )}
           </li>
         </ul>
       </nav>

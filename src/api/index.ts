@@ -1,18 +1,13 @@
 import axios from "axios";
 
-const url = "http://192.168.0.131:8050/api";
+const url = "https://mydream1.herokuapp.com/api";
 const instance = axios.create({
   baseURL: url,
   timeout: 1000,
   headers: {},
 });
 export const request = (params: any, allowStatus: number[] = [200]) =>
-  instance(params).catch((e) => {
-    const { status } = e.response;
-    if (allowStatus.indexOf(status) === -1) {
-      console.log(status);
-    }
-  });
+  instance(params).catch((e) => {});
 export const setBearerToken = (token: string) => {
   instance.defaults.headers["x-access-token"] = `${token}`;
   localStorage.setItem("token", token);

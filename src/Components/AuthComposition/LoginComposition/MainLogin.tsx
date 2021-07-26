@@ -1,4 +1,5 @@
 import React, { FormEvent, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { loginUser } from "../../../api/users";
 export interface ILoginMain {
@@ -19,6 +20,12 @@ export const MainLogin: React.FC = () => {
       [name]: val,
     }));
   };
+  useEffect(() => {
+    const token: string | null = localStorage.getItem("token");
+    if (token) {
+      window.location.href = "/cabinet";
+    }
+  }, []);
   const submitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     loginUser(dataLogin)
@@ -26,6 +33,8 @@ export const MainLogin: React.FC = () => {
         if (res) {
           switch (res.status) {
             case 200:
+              localStorage.setItem("token", res.data.token);
+              window.location.href = "/cabinet";
               return;
             case 422:
               setMessage("Неправильный логин или пароль");

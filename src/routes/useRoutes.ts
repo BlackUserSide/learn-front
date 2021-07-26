@@ -11,7 +11,7 @@ import { MyDreamPage } from "../Components/Cabinet/MyDreamPage/MyDreamPage";
 export const useRoutes: TRoutesWrapper = {
   routes: [
     { path: "/", component: MainSection, exact: true, routes: [] },
-    { path: "*", component: ErrorPage, exact: true, routes: [] },
+
     { path: "/login", component: LoginPage, exact: false, routes: [] },
     { path: "/register", component: RegisterPage, exact: false, routes: [] },
     {
@@ -32,12 +32,13 @@ export const useRoutes: TRoutesWrapper = {
           routes: [],
         },
         {
-          path: "/cabinet/my-dream",
+          path: "/cabinet/dreams",
           exact: false,
           component: MyDreamPage,
           routes: [],
         },
       ],
     },
+    { path: "*", component: ErrorPage, exact: false, routes: [] },
   ],
 };

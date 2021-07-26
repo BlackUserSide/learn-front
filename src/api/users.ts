@@ -13,7 +13,7 @@ export const loginUser = async (data: any) => {
     method: "POST",
     url: `/auth/login`,
     data: {
-      login: data.login,
+      email: data.email,
       password: data.password,
     },
     validateStatus: () => true,
@@ -36,11 +36,39 @@ export const registerUsers = async (data: any) => {
 
   await request({
     method: "POST",
-    url: `/registerUser`,
+    url: `/auth/reg`,
     data: {
-      login: data.login,
+      email: data.email,
       password: data.password,
+      role: data.role,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      status: 0,
+      procent: 0,
+      photo: "",
     },
+    validateStatus: () => true,
+  }).then((res) => {
+    if (res) {
+      response = {
+        ...response,
+        data: res.data,
+        status: res.status,
+      };
+    }
+  });
+  return response;
+};
+
+export const getUser = async () => {
+  let response: Ires = {
+    data: "",
+    status: 0,
+  };
+
+  await request({
+    method: "GET",
+    url: `/user/get_user`,
     validateStatus: () => true,
   }).then((res) => {
     if (res) {
