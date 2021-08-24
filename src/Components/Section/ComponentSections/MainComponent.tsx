@@ -8,10 +8,10 @@ export const MainComponent: React.FC = () => {
     <div className="main-component">
       <div className="main-composition">
         <h1 className="h1">
-          Краудфайдинг
-          <br /> для детей
+          Краудфайдинг <br />
+          для детей
         </h1>
-        <p>Крауфандинговая площадка для детей</p>
+        <p>Краудфандинговая площадка для детей</p>
         <span className="btn btn-main">Подробнее</span>
       </div>
       <img className="img_main_1" src={img1} alt="icon" />
@@ -20,7 +20,7 @@ export const MainComponent: React.FC = () => {
       <div className="image-link-to-red">
         <img src={img4} alt="" />
         <div className="link-to-red">
-          <a href="/#">Особенные детишки</a>
+          <a href="http://мои-мечты.рф/">Особенные детишки</a>
         </div>
       </div>
     </div>

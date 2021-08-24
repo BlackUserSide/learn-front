@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,iBAAiB,CAAC;EACd,QAAQ,EAAE,KAAK;EACf,GAAG,EAAE,GAAG;EACR,IAAI,EAAE,GAAG;EACT,YAAY,EAAE,IAAI;EAClB,SAAS,EAAE,qBAAqB;EAChC,UAAU,EAAE,IAAI;EAChB,KAAK,EAAE,KAAK;EACZ,OAAO,EAAE,GAAG;EACZ,OAAO,EAAE,SAAS;EAClB,aAAa,EAAE,IAAI;CAAG",
+    "sources": [
+        "addBalance.sass"
+    ],
+    "names": [],
+    "file": "addBalance.css"
+}

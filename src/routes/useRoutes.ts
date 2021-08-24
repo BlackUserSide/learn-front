@@ -1,3 +1,4 @@
+import { DreamCard } from "./../Components/CardDream/DreamCard";
 import { ErrorPage } from "./../Components/ErrorPage/ErrorPage";
 import { MainCabinet } from "./../Components/Cabinet/MainCabinet";
 import { LoginPage } from "../Components/AuthComposition/LoginPage";
@@ -21,7 +22,7 @@ export const useRoutes: TRoutesWrapper = {
       routes: [],
     },
     {
-      path: "/cabinet",
+      path: "/cabinet/",
       component: MainCabinet,
       exact: false,
       routes: [
@@ -37,8 +38,10 @@ export const useRoutes: TRoutesWrapper = {
           component: MyDreamPage,
           routes: [],
         },
+        { path: "*", component: ErrorPage, exact: false, routes: [] },
       ],
     },
+    { path: "/dreams/:id", component: DreamCard, exact: false, routes: [] },
     { path: "*", component: ErrorPage, exact: false, routes: [] },
   ],
 };

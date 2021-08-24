@@ -1,12 +1,15 @@
 import React from "react";
 import { useState } from "react";
-
+import { useHistory } from "react-router-dom";
+import { restoreToken } from "../../../../../function/restoreToken";
+import logOut from "../../../../../images/logout.png";
 import avatar from "../../../../../images/no-avatar.png";
 import { PopUpAddBalance } from "../../../../../ui/PopUpAddBalance/PopUpAddBalance";
 type TProps = {
   content: any;
 };
 export const InvestorCabinet: React.FC<TProps> = ({ content }) => {
+  const history = useHistory();
   const [addBalance, setAddBalance] = useState<boolean>(false);
   console.log(addBalance);
 
@@ -17,10 +20,17 @@ export const InvestorCabinet: React.FC<TProps> = ({ content }) => {
     }
     setAddBalance(true);
   };
+  const logOutWrapper = () => {
+    restoreToken();
+    history.push("/");
+  };
   return (
     <div className="investor-cabinet">
       <div className="top-line">
         <h1 className="h1">Инвестор</h1>
+        <div className="log-out-wrapper" onClick={logOutWrapper}>
+          <img src={logOut} alt="" />
+        </div>
       </div>
       <div className="image-avatar-wrapper">
         <img src={avatar} alt="" />

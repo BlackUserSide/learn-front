@@ -2,6 +2,7 @@ import React from "react";
 import { AboutComponent } from "./ComponentSections/AboutComponent";
 import { DreamsComponent } from "./ComponentSections/DreamsComponent";
 import { MainComponent } from "./ComponentSections/MainComponent";
+import { ReviewComponents } from "./ComponentSections/ReviewComponents";
 import { Header } from "./Header";
 
 export const MainSection: React.FC = () => {
@@ -13,6 +14,7 @@ export const MainSection: React.FC = () => {
       </div>
       <AboutComponent />
       <DreamsComponent />
+      <ReviewComponents />
     </>
   );
 };

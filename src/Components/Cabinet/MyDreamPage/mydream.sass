@@ -88,11 +88,17 @@
         width: 70%
         border-radius: 10px
         padding: 20px 40px
+        overflow-y: scroll
         .top-line
             margin-bottom: 30px
             .h2
                 color: #FF007A
                 font-weight: 500
+        .err-wrapper
+            p
+                color: #FF007A
+                font-weight: bold
+                animation: err-fade .5s ease-in-out forwards
         .input-wrapper
             margin-bottom: 10px
             input
@@ -109,6 +115,7 @@
                 font-size: 18px
                 padding: 10px 10px
                 width: 450px
+                resize: none
         button
             cursor: pointer
             background: #FF007A
@@ -122,3 +129,13 @@
             border: none
             &:hover
                 background: rgba(#FF007A, .7)
+@keyframes err-fade
+    0%
+        opacity: 0
+        margin-bottom: -40px
+    50%
+        opacity: 0
+        margin-bottom: 0px
+    100%
+        opacity: 1
+        margin-bottom: 20px

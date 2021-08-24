@@ -7,7 +7,7 @@ export const PhilanthropistMain: React.FC = () => {
       <HeaderBlack />
       <div className="main-composition-philanthropist">
         <div className="main-text">
-          <h1 className="h1">Благотворители</h1>
+          <h1 className="h1">Инвесторы</h1>
         </div>
       </div>
       <PhilanthropistContent />

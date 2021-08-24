@@ -1,21 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import a from "../../../images/image 1.png";
-export const ItemDream: React.FC = () => {
+type TProps = {
+  content: any;
+};
+export const ItemDream: React.FC<TProps> = ({ content }) => {
+  console.log(content);
+
   return (
-    <Link to="/dreams/:id">
+    <Link to={`/dreams/${content.id}`}>
       <div className="item-dream">
         <div className="image-wrapper">
           <img src={a} alt="" />
         </div>
         <div className="name-child">
-          <h3 className="h3">Мишель</h3>
+          <h3 className="h3">{content.nameChild}</h3>
         </div>
         <div className="name-dream">
-          <p>Поездка в диснейленд</p>
+          <p>{content.name}</p>
         </div>
         <div className="need-balance">
-          <p>Требуется: 1000000 MYC</p>
+          <p>Требуется: {content.count} MYC</p>
         </div>
       </div>
     </Link>

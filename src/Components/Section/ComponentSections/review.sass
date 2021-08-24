@@ -1,0 +1,59 @@
+.review-component
+    background: linear-gradient(90deg, #E00476 0%, #8E1A52 100%)
+    position: relative
+    padding: 20px 0
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    .top-line
+        text-align: center
+        color: #fff
+        .h2
+            font-size: 48px
+            font-weight: 500
+            margin-bottom: 25px
+    .controll-panel
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        min-width: 120px
+        img
+            width: 38px
+            cursor: pointer
+            transition: all .3s ease
+            display: inline-block
+            &:hover
+                transform: translate(1.1)
+    .active-slider-wrapper
+        max-width: 40%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        animation: fadein .8s ease-in-out forwards
+        opacity: 0
+        height: 250px
+        .reviev-wrapper
+            text-align: center
+            margin-bottom: 25px
+            p
+                color: #fff
+                font-weight: 400
+                font-size: 24px
+                line-height: 34px
+        .name-wrapper
+            margin-bottom: 5px
+            p
+                color: #FF007A
+                font-size: 18px
+                font-weight: 500
+        .position-wrapper
+            margin-bottom: 25px
+            color: #B7B7B7
+            font-size: 12px
+@keyframes fadein
+    0%
+        opacity: 0
+    100%
+        opacity: 1
