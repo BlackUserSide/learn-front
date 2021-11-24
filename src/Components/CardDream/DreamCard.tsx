@@ -3,18 +3,18 @@ import "./dream.sass";
 import child from "../../images/no-image.png";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import { getDreamId } from "../../api/dreams";
+import { changeDream, getDreamId } from "../../api/dreams";
 import { useState } from "react";
 import { getUser } from "../../api/users";
 import { HeaderBlack } from "../Section/HeaderBlack";
 import { CardEditor } from "./CardEditor/CardEditor";
+import { useCallback } from "react";
 export const DreamCard: React.FC = () => {
   const params: any = useParams();
   const [dataDream, setDataDream] = useState<any>({});
   const [roleUser, setRoleUser] = useState<number>();
   const [activeEditor, setActiveEditor] = useState<boolean>(false);
-
-  useEffect(() => {
+  const updateDream = useCallback(() => {
     getDreamId(params.id)
       .then((res) => {
         switch (res.status) {
@@ -38,6 +38,9 @@ export const DreamCard: React.FC = () => {
       })
       .catch((err) => console.log(err));
   }, [params]);
+  useEffect(() => {
+    updateDream();
+  }, [params, updateDream]);
   const countProcent = () => {
     let procent = (+dataDream.balance * 100) / +dataDream.fullBalance;
 
@@ -45,9 +48,12 @@ export const DreamCard: React.FC = () => {
   };
   const saveChanges = (res: boolean, data: any) => {
     if (res) {
-      return;
+      changeDream(data.id, data)
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));
     }
     setActiveEditor(false);
+    updateDream();
   };
   return (
     <>

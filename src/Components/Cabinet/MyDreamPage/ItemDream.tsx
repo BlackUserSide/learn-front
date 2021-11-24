@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import a from "../../../images/image 1.png";
+import a from "../../../images/no-image.png";
 type TProps = {
   content: any;
 };

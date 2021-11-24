@@ -40,7 +40,7 @@ export const Header: React.FC = () => {
             <a href="/#">Мечтатели</a>
           </li>
           <li>
-            <Link to="/philanthropist">Инвесторы</Link>
+            <Link to="/philanthropist">Благотворители</Link>
           </li>
           <li>
             {auth ? (

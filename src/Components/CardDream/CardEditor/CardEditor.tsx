@@ -21,7 +21,9 @@ export const CardEditor: React.FC<Props> = ({
   useEffect(() => {
     setDataEditor(dataDream);
   }, [dataDream]);
-  const changeHandler = (e: FormEvent<HTMLInputElement>) => {
+  const changeHandler = (
+    e: FormEvent<HTMLInputElement> | FormEvent<HTMLTextAreaElement>
+  ) => {
     const name = e.currentTarget.name;
     const val = e.currentTarget.value;
     setDataEditor((prev: any) => ({
@@ -30,17 +32,21 @@ export const CardEditor: React.FC<Props> = ({
     }));
   };
   useEffect(() => {
-    if (dataEditor.balance !== 0) {
-      setMessageErr("Невозомжно редактировать мечту с положительным болансом");
-      setActive(true);
-      setTimeout(() => {
-        saveChanges(false, dataEditor);
-      }, 3500);
+    if (dataDream) {
+      if (dataDream.balance !== 0) {
+        setMessageErr(
+          "Невозомжно редактировать мечту с положительным болансом"
+        );
+        setActive(true);
+        setTimeout(() => {
+          saveChanges(false, dataEditor);
+        }, 3500);
+      }
+      if (dataEditor.name === "") {
+        setMessageErr("Имя не может быть пустое");
+      }
     }
-    if (dataEditor.name === "") {
-      setMessageErr("Имя не может быть пустое");
-    }
-  }, [dataEditor, saveChanges]);
+  }, [dataDream, dataEditor, saveChanges]);
 
   return (
     <div className="card-editor-main-wrapper">
@@ -82,13 +88,14 @@ export const CardEditor: React.FC<Props> = ({
             name="desc_dream"
             cols={30}
             rows={5}
+            onChange={changeHandler}
             defaultValue={dataEditor.desc_dream}
             disabled={active}
           ></textarea>
         </div>
         <div className="item_dream_btn">
           <div className="btn_update">
-            <span>Сохранить</span>
+            <span onClick={() => saveChanges(true, dataEditor)}>Сохранить</span>
           </div>
         </div>
       </div>

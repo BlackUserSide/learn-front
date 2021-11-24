@@ -116,7 +116,7 @@ export const MainRegister: React.FC = () => {
             }`}
             onClick={() => changeRole(1)}
           >
-            Инвестор
+            Благотворитель
           </span>
         </div>
         {dataRegister.role === 1 || dataRegister.role === 0 ? (

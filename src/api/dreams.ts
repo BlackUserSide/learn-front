@@ -67,3 +67,47 @@ export const getDreamId = async (id: string) => {
   });
   return response;
 };
+export const changeDream = async (id: string, data: any) => {
+  let response: Ires = {
+    data: "",
+    status: 0,
+  };
+
+  await request({
+    method: "PUT",
+    url: `/dream/update/${id}`,
+    data: data,
+    validateStatus: () => true,
+  }).then((res) => {
+    if (res) {
+      response = {
+        ...response,
+        data: res.data,
+        status: res.status,
+      };
+    }
+  });
+  return response;
+};
+export const getAllDreams = async () => {
+  let response: Ires = {
+    data: "",
+    status: 0,
+  };
+
+  await request({
+    method: "GET",
+    url: `/dream/get_all`,
+
+    validateStatus: () => true,
+  }).then((res) => {
+    if (res) {
+      response = {
+        ...response,
+        data: res.data,
+        status: res.status,
+      };
+    }
+  });
+  return response;
+};
